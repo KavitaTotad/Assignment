@@ -1,0 +1,17 @@
+3. write a pseudocode to reverse the digits of a number
+
+enter a input from user as num
+
+initialize rev to 0.
+
+iterate a while loop with a condition num>0.
+
+inside while loop divide num by 10 store it in rem variable.
+
+store (rev*0)+rem variable in rev.
+
+then store a num//10 in num.
+
+end a hile loop
+
+print rev

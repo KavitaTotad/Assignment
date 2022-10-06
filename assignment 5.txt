@@ -1,0 +1,13 @@
+5.write a pseudocode to count the nuber of vowels in the string CITIUSTECH.
+
+initialize count = 0
+
+store the string CITIUSTECH in variable s
+
+store the vowels(a,e,i,o,u) in array 
+
+iterate a 'for' loop upon the string
+
+if the iterator is in array than increment count 
+
+print count 

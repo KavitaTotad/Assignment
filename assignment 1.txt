@@ -1,0 +1,9 @@
+1. write a pseudocode to determine whether a person is eligible to vote or not given his/her age the voting eligibility criteria is that the persons age must be>=18
+
+get input from the user
+
+check if the given input >= 18
+
+if the age is greater than are = 18 than print "eligible to vote"
+
+or esle print"Not eligible to vote"
