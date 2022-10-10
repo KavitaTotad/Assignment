@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <input type="text"><br><br>
+    <input type="text"><br><br>
+    <div id="div1" style="height: 20px; width:400px ;background-color:rgb(123, 217, 225); padding: 10px;"></div><br><br>
+    <div id="div2" style="height: 20px; width:400px ;background-color:rgb(214, 138, 247); padding: 10px;"></div><br><br>
+    <div id="div3">
+        <textarea rows="5" cols="100"></textarea><br><br>
+        <textarea rows="5" cols="100"></textarea><br><br>
+    </div>
+
+    <button type="button" id="btn">Apply Style to TextBoxes</button>
+    <button type="button" id="bn1">Apply Style to first div </button>
+    <button type="button" id="bn2">Say Hello </button>
+
+    <script>
+        $(function () {
+            $('#btn').click(function () {
+                $('textarea').css({ "border": "solid 3px red" });
+            })
+        })
+
+        $(function () {
+            $('#bn1').click(function () {
+                $('#div1').text('This is first div.');
+            });
+        });
+
+        $(function () {
+            $('#bn2').click(function () {
+                $('textarea').text('Say Hello!');
+            });
+        });
+
+        $(function () {
+            $('#bn2').click(function () {
+                $('input').val('Say Hello!');
+            });
+        });
+    </script>
+</body>
+
+</html>

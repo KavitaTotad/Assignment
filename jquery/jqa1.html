@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    </head>
+    <body>
+        Email : <input type="text" id="demo" placeholder="Enter email id"><br><br>
+        <button type="button" id="btn">Show Email</button><br><br>
+        <div id='d' style="height: 20px; width:400px;background-color:whitergb(123,217,225); padding: 10px;"></div>
+        <script>
+            $(function () {
+                $('#btn').click(function(){
+                    let res = document.getElementById('demo').value;
+                    $('#d').text(res);
+                })
+            })
+        </script>
+    </body>
+</html>
