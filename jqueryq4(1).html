@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Document</title>
+        </head>
+        <style>
+            .container{
+                border:2px solid black;
+                background-color: beige;
+                width:50%;
+                padding:10px;
+            }
+        </style>
+        <body>
+            <div class="container">
+                <h3 style="margin-top:0"><br>posting data using jquery AJAX get request<b></h3>
+                <label for="userid">User Id:</label><input type="text" id="userid"><br><br>
+                <label for="title">Title:</label><input type="text" id="title"><br><br>
+                <label for="completed">Completed?</label><input type="checkbox" id="completed"><br><br>
+                <button id="btn">post Details</button>
+                </div>
+                <br>
+                <div class="container" style="display:none;">
+                <div id="details"></div>
+                </div>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script>
+                    $(document).ready(function(){
+                        $('#btn').click(function(){
+                        $.ajax({
+                       url:'https://jsonplaceholder.typicode.com/todos',
+                       type:'POST',
+                       datatype:'json',
+                       data:{
+                        userid : $('#userid').val(),
+                        title : $('#title').val(),
+                        completed:$('#completed').is(':checked')
+                     },
+                       success:function(data){
+                        console.log(data);
+                        var result=`<b>User added successfully</b><br><br>
+                        The details are:<br>
+                        id :${data.id}<br>
+                        userid:${data.userid}<br>
+                        title:${data.title}<br>
+                        completed:${data.completed}`
+
+                        $("#details").html(result)
+                        $(".container").css('display','block')
+                       }
+                    })
+                });
+            })
+        
+
+            </script>
+            </body>
+            </html>
+
+                

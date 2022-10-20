@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body{
+                background-color: aquamarine;
+            }
+            button{
+                padding :5px;
+                background-color: darkblue;
+                color: white;
+
+            }
+            button:hover{
+                background-color: rgba(0,0,139,0.7);
+                cursor:pointer;
+
+            }
+        </style>
+        </head>
+    <body>
+        <div style="margin-top:20px">
+        <button>click me to load Data</button><br><br>
+        <div id="mydiv"></div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('button').on('click',function(){
+                    $('#mydiv').load(' jqueryQ5.html');
+                })
+            })
+        </script>
+    </body>
+    </html>

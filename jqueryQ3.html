@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Document</title>
+        </head>
+        <style>
+            .container{
+                border:2px solid black;
+                background-color: beige;
+                width:50%;
+                padding:10px;
+            }
+        </style>
+        <body>
+            <div class="container">
+                <h3 style="margin-top:0"><br>Fecthing data using jquery AJAX get request<b></h3>
+                <p><b>completed todos</b></p>
+                <select name="todo" id="completed"></select>
+                <p><b>Not completed todos</b></p>
+                <ol style="font-size:small;" id="notCompleted"></ol>
+            </div>
+            <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $.ajax({
+                       url:'https://jsonplaceholder.typicode.com/todos',
+                       type:'GET',
+                       dataType:'json',
+                       success:function(data){
+                        var initialOption = `<option value="" selected disabled>Expand to view data</option>`
+                        var resultOfCompleted=``
+                        var resultOfNotCompleted=``
+                        data.forEach(data=>{
+                            if(data.completed === true){
+                                resultOfCompleted += `<option>${data.title}</option>`
+
+                            }
+                            else{
+                                resultOfNotCompleted += `<li>${data.title}</li>`
+                            }
+                        })
+                        $('#completed').html(initialOption + resultOfCompleted)
+                        $('#notCompleted').html(resultOfNotCompleted)
+
+                       } 
+                    })
+                })
+            </script>
+        </body>
